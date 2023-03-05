@@ -4,6 +4,6 @@
 
 ### Contenido
 
-El curso se divide en 6 unidades, por lo tanto, cada carpeta contiene los scripts generados para resolver las tareas correspondientes a cada unidad.
+Cada archivo corresponde a una de las tareas realizadas para el curso.
 
 Contacto: lucas.defreitas@unican.es
