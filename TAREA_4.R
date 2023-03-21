@@ -78,4 +78,4 @@ modelo <- C5.0(Impago ~ ., data = deudas)
 resultados <- predict(modelo, deudas, type = "class")
 table(resultados, deudas$Impago)
 
-
+plot(modelo) # Gráfico
