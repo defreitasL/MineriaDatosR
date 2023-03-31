@@ -21,6 +21,10 @@ muestra <- sample(1:nrow(deudas), 80)
 entrenamiento <- deudas[muestra, 5:8]
 prueba <- deudas[-muestra, 5:8]
 
+resultados <- knn(entrenamiento, entrenamiento, cl = deudas[muestra,"Impago"])
+table(resultados, deudas[muestra,"Impago"])
+t <- table(resultados, deudas[muestra,"Impago"])
+t ; 100 * sum(diag(t)) / sum(t)
 
 resultados <- knn(entrenamiento, prueba, cl = deudas[muestra,"Impago"])
 table(resultados, deudas[-muestra,"Impago"])
@@ -56,4 +60,11 @@ table(resultados.entrenamiento, entrenamiento$var)
 
 resultados.prueba <- predict(modelo, newdata = prueba, type = "class")
 t <- table(resultados.prueba, prueba$var)
+t ; 100 * sum(diag(t)) / sum(t)
+
+modelo <- svm(var ~ ., data = vinos)
+summary(modelo)
+
+resultados.final <- predict(modelo, newdata = vinos, type = "class")
+t <- table(resultados.final, vinos$var)
 t ; 100 * sum(diag(t)) / sum(t)
